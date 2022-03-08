@@ -1,20 +1,11 @@
-
-
-import {Error,Login}from'./Pages';
-import {useState} from 'react'
+import "./App.css"
+import Header from './components/Header/Header'
 function App() {
-  const [color,setColor]=useState(true)
-console.log("hi")
- 
-const toggleColor=()=>{
-  return setColor(!color);
-}
-
   return (
-    <div class={color?"white":"black"}>
-     <Error/>
-     <Login/>
-     <button onClick={toggleColor} >mybutton</button>
+    <div className="layout">
+      <Header/>
+      <main>Content</main>
+      <footer>Footer</footer>
     </div>
   );
 }
