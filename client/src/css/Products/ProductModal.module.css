@@ -1,0 +1,30 @@
+.product_desc {
+  display: flex;
+}
+.product_desc img {
+  height: 100%;
+  width: 50%;
+}
+.product_desc .modal_info {
+  display: flex;
+  flex-direction: column;
+  color: #3d3c3c;
+  font-weight: 600;
+  gap: 2rem;
+}
+.product_desc .modal_info :nth-child(1) {
+  margin: 0 auto;
+  color: black;
+  font-size: 2rem;
+}
+
+.close {
+  transition: all 0.3s ease 0.1s;
+  position: absolute;
+  font-size: 1.5rem;
+  color: #61e281;
+}
+.close:hover {
+  font-size: 2rem;
+  cursor: pointer;
+}
