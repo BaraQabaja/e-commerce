@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(200px, 1fr));
   gap: 1rem;
-  grid-auto-rows: minmax(400px, auto);
+  grid-auto-rows: minmax(400px, 80%);
   padding: 1rem;
   padding-top: 4rem;
   overflow-y: auto;
@@ -21,6 +21,13 @@
 }
 .products_section .cart img {
   width: 100%;
+  filter: blur(0.8px);
+  transition: all 0.6s ease 0.1s;
+}
+.products_section .cart img:hover {
+  transform: rotate(5deg);
+  border-radius: 50%;
+  filter: blur(0);
 }
 .products_section .cart .product_info {
   width: 90%;
