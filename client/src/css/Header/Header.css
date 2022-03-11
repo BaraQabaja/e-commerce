@@ -2,7 +2,6 @@
 header {
   grid-area: head;
   background-color: #61e281;
-  color: white;
   font-size: 2rem;
   font-weight: 600;
   display: flex;

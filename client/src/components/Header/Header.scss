@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
-
+// $main-color:rgb(97, 226, 129);
 header
 {
   grid-area: head;
 background-color: rgb(97, 226, 129);
-color:white;
+
 font-size: 2rem;
 font-weight: 600;
 display: flex;
@@ -13,3 +13,12 @@ justify-content: flex-start;
 padding-left: 5rem;
 font-family: 'Roboto';
 }
+
+//create branch
+//push branch
+//pull request
+//merge to master
+
+//local
+//git checkout master
+//git pull origin master
