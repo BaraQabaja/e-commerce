@@ -1,0 +1,8 @@
+footer {
+  grid-area: foot;
+  background-color: #61e281;
+  font-family: "Roboto";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

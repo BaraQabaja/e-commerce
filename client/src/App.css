@@ -19,8 +19,3 @@ main
   background-color: rgb(127, 129, 255);
 }
 
-footer
-{
-  grid-area: foot;
-  background-color: rgb(255, 127, 227);
-}
