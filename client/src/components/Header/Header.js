@@ -1,12 +1,14 @@
-import React from 'react';
+import React from "react";
 import "../../css/Header/Header.css";
-import {FaShopify} from 'react-icons/fa';
-const Header=()=> {
-
- 
+import { FaShopify } from "react-icons/fa";
+import {word} from "../../words";
+const Header = () => {
+  const {headerTitle}=word;
   return (
-    <header>Shop Now <FaShopify/></header>
-  )
-}
+    <header>
+      {headerTitle}<FaShopify/>
+    </header>
+  );
+};
 
 export default Header;

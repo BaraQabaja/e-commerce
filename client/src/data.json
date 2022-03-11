@@ -1,0 +1,35 @@
+[
+    {
+       "id":"id_1",
+       "title":"gray-shirt",
+       "imgUrl":"https://sc04.alicdn.com/kf/H2f6b12df68044f778ac39d7b4932b9d6V.jpg",
+       "desc":"this is product 1",
+       "price":19,
+       "size":["S","M","L"]
+    },
+    {
+        "id":"id_2",
+        "title":"black-shirt",
+        "imgUrl":"https://sc04.alicdn.com/kf/H6b5a6294f38947f1b7827d916738ccda3/242064241/H6b5a6294f38947f1b7827d916738ccda3.jpg_.webp",
+        "desc":"this is product 2",
+        "price":21,
+        "size":["S","M","L"]
+     },
+     {
+        "id":"id_3",
+        "title":"cap",
+        "imgUrl":"https://sc04.alicdn.com/kf/Hd0926d106eff48828316ba6909e25ccen.jpg",
+        "desc":"this is product 3",
+        "price":5,
+        "size":["S","M","L"]
+     },
+     {
+        "id":"id_4",
+        "title":"Sweatshirts",
+        "imgUrl":"https://sc04.alicdn.com/kf/Ucb7031b8dbf44f55a274f9b26f7d5c16j.jpg",
+        "desc":"this is product 3",
+        "price":15,
+        "size":["S","M","L"]
+     }
+
+]
