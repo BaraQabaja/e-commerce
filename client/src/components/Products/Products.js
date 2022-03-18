@@ -27,7 +27,10 @@ const Products = ({ products }) => {
               <h1>{title}</h1>
               <h1>${price}</h1>
             </div>
+            <div>
+            <button className={classes.buy_now_button}>Buy Now</button>
             <button className={classes.add_to_cart_button}>Add To Cart</button>
+            </div>
           </div>
         );
       })}

@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap");
+.FilterSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px rgba(40, 43, 40, 0.26) solid;
+  box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.356);
+  padding: 0.5rem;
+  border-radius: 5px;
+  height: 70%;
+  margin: auto;
+  width: 80%;
+}
+.FilterSection .title {
+  background-color: #61e281;
+  width: 100%;
+  color: white;
+  display: grid;
+  place-items: center;
+  height: 4rem;
+}
+.FilterSection .FilterBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+.FilterSection .FilterBody h1 {
+  margin-top: 2rem;
+  font-family: "Fredoka";
+  font-weight: 400;
+}
+.FilterSection .size-filter, .FilterSection .price-filter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.FilterSection .size-filter label, .FilterSection .price-filter label {
+  font-size: large;
+  font-weight: 400;
+}
+.FilterSection .size-filter select, .FilterSection .price-filter select {
+  font-size: large;
+  font-weight: 400;
+}
+.FilterSection .size-filter select option, .FilterSection .price-filter select option {
+  opacity: 0.1;
+}
