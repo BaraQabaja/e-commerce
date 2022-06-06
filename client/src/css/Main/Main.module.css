@@ -1,0 +1,10 @@
+main {
+  grid-area: content;
+}
+
+.product_filter_section {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}

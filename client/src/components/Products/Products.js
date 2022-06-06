@@ -4,6 +4,8 @@ import classes from "./Products.module.scss";
 import { useState } from "react";
 
 import ProductModal from "./ProductModal";
+
+import {Routes,Route,Link} from 'react-router-dom'
 const Products = ({ products }) => {
   const [currenProduct, setCurrentProduct] = useState("");
   const openModal = (item) => {
@@ -12,6 +14,9 @@ const Products = ({ products }) => {
   const closeModal = () => {
     setCurrentProduct(false);
   };
+
+
+
   return (
     <div className={classes.products_section}>
       {products.map((item, index) => {
@@ -19,9 +24,10 @@ const Products = ({ products }) => {
 
         return (
           <div key={id} className={classes.cart}>
-            <a href="#" onClick={() => openModal(item)}>
+            
+            <Link to={'#'} onClick={()=>openModal(item)}>
               <img src={imgUrl} alt={title} />
-            </a>
+            </Link>
 
             <div className={classes.product_info}>
               <h1>{title}</h1>

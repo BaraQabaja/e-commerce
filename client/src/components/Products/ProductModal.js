@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import { FaTimes } from "react-icons/fa";
 import classes from "./ProductModal.module.scss";
-const ProductModal = ({ currenProduct, openModal, closeModal }) => {
-  const [dashSize, setDashSize] = useState([]);
+const ProductModal = ({currenProduct,  closeModal}) => {
+
 
   //this is to put dash beside the size notation like m- or s-
 
