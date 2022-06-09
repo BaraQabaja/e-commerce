@@ -1,13 +1,20 @@
 import React from "react";
 import classes from "./Products.module.scss";
-
 import { useState } from "react";
-
+import { useDispatch} from "react-redux";
 import ProductModal from "./ProductModal";
+import { Routes, Route, Link } from "react-router-dom";
+import { increment } from "../../Redux/counterSlice";
+import {addItem} from '../../Redux/addItemSlice'
+import { increasePrice } from "../../Redux/priceTotalSlice";
 
-import {Routes,Route,Link} from 'react-router-dom'
 const Products = ({ products }) => {
   const [currenProduct, setCurrentProduct] = useState("");
+ 
+  
+  //state.count here count is the variable i declared in counterReducer
+
+  const dispatch = useDispatch();
   const openModal = (item) => {
     setCurrentProduct(item);
   };
@@ -15,7 +22,15 @@ const Products = ({ products }) => {
     setCurrentProduct(false);
   };
 
+  const addCartHandler = ({...item}) => {
 
+    dispatch(increment());
+    dispatch(addItem({...item}))
+   dispatch(increasePrice({...item}))
+ 
+ 
+    // setCartValue(cartValue++)
+  };
 
   return (
     <div className={classes.products_section}>
@@ -24,8 +39,7 @@ const Products = ({ products }) => {
 
         return (
           <div key={id} className={classes.cart}>
-            
-            <Link to={'#'} onClick={()=>openModal(item)}>
+            <Link to={"#"} onClick={() => openModal(item)}>
               <img src={imgUrl} alt={title} />
             </Link>
 
@@ -34,13 +48,18 @@ const Products = ({ products }) => {
               <h1>${price}</h1>
             </div>
             <div>
-            <button className={classes.buy_now_button}>Buy Now</button>
-            <button className={classes.add_to_cart_button}>Add To Cart</button>
+              <button className={classes.buy_now_button}>Buy Now</button>
+              <button
+                className={classes.add_to_cart_button}
+                onClick={()=>addCartHandler({...item})}
+              >
+                Add To Cart
+              </button>
             </div>
           </div>
         );
       })}
-    <ProductModal  closeModal={closeModal} currenProduct={currenProduct}/>
+      <ProductModal closeModal={closeModal} currenProduct={currenProduct} />
     </div>
   );
 };
