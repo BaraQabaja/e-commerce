@@ -1,13 +1,17 @@
 import { useState } from "react";
 import "./App.css";
-import { Error ,Home} from "./Pages";
+import { Error ,Home,Shop} from "./Pages";
 import { Routes, Route, NavLink, Link } from "react-router-dom";
+
 function App() {
   
   return (
-
-<Home />
+   
+<Routes>
+  <Route path="/home" element={<Home />}/>
+  <Route path="home/shop" element={<Shop/>}/>
  
+</Routes>
 
   );
 }
