@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { Error ,Home,Shop} from "./Pages";
-import { Routes, Route, NavLink, Link } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 
 function App() {
   
