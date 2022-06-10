@@ -12,7 +12,7 @@ const Carts = () => {
   const { count } = useSelector((state) => state.counter);
   const { totalPrice } = useSelector((state) => state.priceTotal);
   const deleteCartHandler = ({ ...item }) => {
-    const { price } = item;
+    
     dispatch(decrement());
     dispatch(removeItem({ ...item }));
     dispatch(decreasePrice({ ...item }));
@@ -29,13 +29,13 @@ const Carts = () => {
   }
 
   return (
-    <div > 
+    <div>
       {state}
       <div className={classes.cart_container}>
         {data.map((item) => {
-          const { id, title, imgUrl, price } = item;
+          
           return (
-            <Cart key={id} {...item} deleteCartHandler={deleteCartHandler} />
+            <Cart {...item} deleteCartHandler={deleteCartHandler} />
           );
         })}
       </div>
