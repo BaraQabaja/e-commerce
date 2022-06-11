@@ -1,15 +1,30 @@
 import classes from "./Home.module.css";
-import { useState } from "react";
-import Main from '../../components/Main/Main'
+import { useState, useEffect } from "react";
+import Main from "../../components/Main/Main";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
-
+import { fetchProducts } from "../../Redux/productSlice";
 import data from "../../data.json";
+import { useDispatch, useSelector } from "react-redux";
+
 const Home = () => {
-  const [products, setProducts] = useState(data);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+  const { productData,statusOfFetching } = useSelector((state) => state.products);
+  console.log('statusOfFetching')
+  console.log(statusOfFetching)
+  console.log('productData')
+  console.log(productData)
   const [size, setSize] = useState("");
   const [price, setPrice] = useState("");
   const [productNumber, setProductNumber] = useState(data.length);
+  const [products, setProducts] = useState([]);
+  
+  // const [products, setProducts] = useState(data);
+
+  //****************************************** */
   const sizeHandler = (e, normalSort) => {
     setSize(e.target.value);
     if (e.target.value == "All") {
@@ -42,20 +57,35 @@ const Home = () => {
       })
     );
   };
+  let display;
+switch(statusOfFetching){
+  case "success":
+    display = (
+      <div className={classes.layout}>
+        <Header />
+        <Main
+          sizeHandler={sizeHandler}
+          size={size}
+          price={price}
+          priceHandler={priceHandler}
+          productNumber={productNumber}
+          products={productData}
+        />
+        <Footer />
+      </div>)
+  break;
+  case "pending":
+    display = <h1>Loading....</h1>;
+  break;
+  case "rejected":
+    display = <h1>ERROR</h1>;
+  break;
+}
+ 
   return (
-    <div className={classes.layout}>
-     
-      <Header />
-      <Main
-        sizeHandler={sizeHandler}
-        size={size}
-        price={price}
-        priceHandler={priceHandler}
-        productNumber={productNumber}
-        products={products}
-      />
-      <Footer />
-    </div>
+    <>
+     {display}
+    </>
   );
 };
 
