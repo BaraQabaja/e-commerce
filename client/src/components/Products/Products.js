@@ -1,18 +1,18 @@
-import React from "react";
+import React,{useState} from "react";
 import classes from "./Products.module.scss";
-import { useState } from "react";
+
 import { useDispatch} from "react-redux";
 import ProductModal from "./ProductModal";
-import { Routes, Route, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import { increment } from "../../Redux/counterSlice";
 import {addItem} from '../../Redux/addItemSlice'
 import { increasePrice } from "../../Redux/priceTotalSlice";
 
-const Products = ({ products }) => {
+
+const Products = ({products}) => {
   const [currenProduct, setCurrentProduct] = useState("");
- 
+
   
-  //state.count here count is the variable i declared in counterReducer
 
   const dispatch = useDispatch();
   const openModal = (item) => {
@@ -22,14 +22,13 @@ const Products = ({ products }) => {
     setCurrentProduct(false);
   };
 
-  const addCartHandler = ({...item}) => {
+  const addCartHandler = (item) => {
 
     dispatch(increment());
-    dispatch(addItem({...item}))
-   dispatch(increasePrice({...item}))
+    dispatch(addItem(item))
+   dispatch(increasePrice(item))
  
  
-    // setCartValue(cartValue++)
   };
 
   return (
@@ -51,7 +50,7 @@ const Products = ({ products }) => {
               <button className={classes.buy_now_button}>Buy Now</button>
               <button
                 className={classes.add_to_cart_button}
-                onClick={()=>addCartHandler({...item})}
+                onClick={()=>addCartHandler(item)}
               >
                 Add To Cart
               </button>
@@ -63,4 +62,6 @@ const Products = ({ products }) => {
     </div>
   );
 };
-export default Products;
+
+export default Products
+
