@@ -1,6 +1,8 @@
 import classes from "./Filter.module.scss";
 import { useState } from "react";
 const Filter = ({ sizeHandler, size ,price,priceHandler,productNumber}) => {
+
+  
   return (
     <section className={classes.FilterSection}>
       <h1 className={classes.title}>Filter</h1>
@@ -16,7 +18,7 @@ const Filter = ({ sizeHandler, size ,price,priceHandler,productNumber}) => {
           </select>
         </div>
         <div className={classes["price-filter"]}>
-          <label htmlFor="price">Order</label>
+          <label htmlFor="price">Price-Order</label>
           <select id="price" value={price} onChange={priceHandler}>
             <option>Normal</option>
             <option>Lowest</option>

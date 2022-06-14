@@ -31,6 +31,26 @@ const Products = ({products}) => {
  
   };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div className={classes.products_section}>
       {products.map((item, index) => {
